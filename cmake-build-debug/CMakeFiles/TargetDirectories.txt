@@ -1,0 +1,4 @@
+/Users/kpovel/Documents/nules/OOP/cmake-build-debug/CMakeFiles/lab1_example.dir
+/Users/kpovel/Documents/nules/OOP/cmake-build-debug/CMakeFiles/lab1_main.dir
+/Users/kpovel/Documents/nules/OOP/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/kpovel/Documents/nules/OOP/cmake-build-debug/CMakeFiles/rebuild_cache.dir
