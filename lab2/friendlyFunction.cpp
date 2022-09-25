@@ -29,13 +29,13 @@ public:
     }
 
     void showResult() const {
-        if (imaginaryPart < 0)
+        if (imaginaryPart < 0) {
             if (imaginaryPart == -1) {
                 cout << "The complex number is: " << realPart << " - i" << "\n";
             } else {
                 cout << "The complex number is: " << realPart << imaginaryPart << "i" << "\n";
             }
-        else if (imaginaryPart == 1) {
+        } else if (imaginaryPart == 1) {
             cout << "The complex number is: " << realPart << " + i" << "\n";
         } else {
             cout << "The complex number is: " << realPart << " + " << imaginaryPart << "i" << "\n";
