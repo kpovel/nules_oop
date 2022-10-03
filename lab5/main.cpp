@@ -37,13 +37,13 @@ public:
         return area;
     }
 
-    void showResult() {
-        cout << "Height: " << height << "\n"
-             << "Weight: " << weight << "\n"
-             << "Area: " << calcArea() << "\n\n";
+    friend void operator<<(ostream &t, Hourglass &obj) {
+        cout << "Height: " << obj.height << "\n"
+             << "Weight: " << obj.weight << "\n"
+             << "Area: " << obj.calcArea() << "\n\n";
     }
 
-    void incrementValues() {
+    void operator++() {
         height++;
         weight++;
     }
@@ -54,18 +54,17 @@ public:
         newFigure.weight = h1.weight + h2.weight;
         return newFigure;
     }
-
 };
 
 int main() {
     Hourglass h1(10, 5);
     Hourglass h2(20, 10);
 
-    h1.showResult();
+    cout << h1;
 
     Hourglass newFigure = Hourglass::createNewHourglass(h1, h2);
-    newFigure.incrementValues();
-    newFigure.showResult();
+    ++newFigure;
+    cout << newFigure;
 
     return 0;
 }
