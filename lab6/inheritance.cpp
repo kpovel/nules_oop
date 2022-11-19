@@ -50,7 +50,7 @@ public:
         this->carType = "passenger";
     }
 
-    Car(int numberSeats, string carType) {
+    Car(int numberSeats, string carType) : Vehicle(color){
         this->numberSeats = numberSeats;
         this->carType = carType;
     }
@@ -69,14 +69,14 @@ public:
     }
 };
 
-class Taxi : public Car {
+class Taxi : public Car{
     int price;
 public:
     Taxi() {
         this->price = 0;
     }
 
-    Taxi(int price) {
+    Taxi(int price, int numberSeats, string carType): Car(numberSeats, carType) {
         this->price = price;
     }
 
@@ -91,11 +91,9 @@ public:
 
 
 int main() {
-    Taxi n(300);
-    n.setColor("yellow");
-    n.setCarType("passenger");
-    n.setNumberSeats(5);
+    Taxi n(300, 5, "passenger");
     n.showTaxiInfo();
+
 
     return 0;
 }
