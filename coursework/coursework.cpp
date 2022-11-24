@@ -119,18 +119,19 @@ public:
     }
 };
 
-void showResult(const list<Library>& clientList, const string& description) {
-    cout << description << ": " ;
+void showResult(const list<Library> &clientList, const string &description) {
+    cout << description << ": ";
 
-//todo: find how to sort list by clientSurname
-    ofstream out("result.txt");
+    //todo: find how to sort list by clientSurname
 
-    for (Library client: clientList) {
-        cout << client.getClientSurname() <<  ", ";
-        out << client  << "\n";
+    if (clientList.empty()) {
+        cout << "there are no such clients";
     }
 
-    out.close();
+    for (Library client: clientList) {
+        cout << client.getClientSurname() << ", ";
+    }
+
     cout << "\n\n";
 }
 
