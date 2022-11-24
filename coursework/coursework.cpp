@@ -119,10 +119,12 @@ public:
     }
 };
 
-void showResult(const list<Library> &clientList, const string &description) {
+void showResult(list<Library> &clientList, const string &description) {
     cout << description << ": ";
 
-    //todo: find how to sort list by clientSurname
+    clientList.sort([](Library f, Library s) {
+        return f.getClientSurname() < s.getClientSurname();
+    });
 
     if (clientList.empty()) {
         cout << "there are no such clients";
