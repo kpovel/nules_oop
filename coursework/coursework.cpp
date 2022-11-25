@@ -138,7 +138,7 @@ void showResult(list<Library> &clientList, const string &description) {
 int main() {
     Book book1("Factor-Churchill", "Jonson");
     Book book2("Testament", "Shevchencko");
-    Book book3("City", "Pidmohylnyi");
+    Book book3("City", "Pidmohylniy");
     Library library1(&book1, "Karas", 12, 2, 2022);
     Library library2(&book2, "Ivanov", 24, 4, 2005);
     Library library3(&book2, "Petrov", 11, 2, 2008);
