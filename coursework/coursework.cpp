@@ -52,9 +52,7 @@ public:
 class Library {
     Book *book;
     string clientSurname;
-    int day;
-    int month;
-    int year;
+    int dateReturn[3];
 public:
     Library() = default;
 
@@ -62,9 +60,9 @@ public:
         this->book = book;
         this->clientSurname = clientSurname;
         if (isValidDate(day, month, year)) {
-            this->day = day;
-            this->month = month;
-            this->year = year;
+            this->dateReturn[0] = day;
+            this->dateReturn[1] = month;
+            this->dateReturn[2] = year;
         } else {
             cout << "Not valid date \n";
         }
@@ -75,15 +73,15 @@ public:
     }
 
     int getDayReturn() const {
-        return day;
+        return dateReturn[0];
     }
 
     int getMothReturn() const {
-        return month;
+        return dateReturn[1];
     }
 
     int getYearReturn() const {
-        return year;
+        return dateReturn[2];
     }
 
     int checkDate(const int date[3]) const {
@@ -99,8 +97,8 @@ public:
     }
 
     friend ostream &operator<<(ostream &out, Library &obj) {
-        out << obj.clientSurname << " " << obj.day << " " << obj.month << " " << obj.year
-            << " " << obj.book->getAuthorName() << " " << obj.book->getBookTitle() << endl;
+        out << obj.getClientSurname() << " " << obj.getDayReturn() << " " << obj.getMothReturn() << " "
+            << obj.getYearReturn() << " " << obj.book->getAuthorName() << " " << obj.book->getBookTitle() << endl;
         return out;
     }
 
@@ -109,9 +107,9 @@ public:
         string bookTitle = obj.book->getBookTitle();
 
         in >> obj.clientSurname;
-        in >> obj.day;
-        in >> obj.month;
-        in >> obj.year;
+        in >> obj.dateReturn[0];
+        in >> obj.dateReturn[1];
+        in >> obj.dateReturn[2];
         in >> authorName;
         in >> bookTitle;
 
